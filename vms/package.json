@@ -6,6 +6,7 @@
   "scripts": {
   "dev": "vite",
   "lint": "eslint .",
+    "homepage": "https://visitor-hub-frontend.onrender.com/",
   "build": "vite build && npx tailwindcss -o build/styles.css --minify",
   "preview": "vite preview"
 },

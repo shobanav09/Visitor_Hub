@@ -87,7 +87,6 @@ VisitorSchema.pre("save", async function (next) {
 });
 
 const Visitor = mongoose.model("Visitor", VisitorSchema);
-
 // Register New Visitor
 app.post("/visitor/register", async (req, res) => {
   try {
