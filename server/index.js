@@ -87,12 +87,6 @@ VisitorSchema.pre("save", async function (next) {
 });
 
 const Visitor = mongoose.model("Visitor", VisitorSchema);
-app.use(express.static("build"));
-
-app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "build", "index.html"));
-});
-
 // Register New Visitor
 app.post("/visitor/register", async (req, res) => {
   try {
