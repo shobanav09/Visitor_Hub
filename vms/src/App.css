@@ -1,0 +1,19 @@
+:root{
+    --color: #0033ff;
+    background-color: rgb(247, 247, 247);
+    --hover:#001d8f;
+}
+.color{
+    color:var(--color);
+}
+
+.sidebar-icons{
+    color:#0033ff;
+    font-size: 1.25rem;
+}
+.icons,.general-icons{
+    font-size: 1.25rem;
+}
+.three-dash{
+    font-size: 1.5rem;
+}
