@@ -10,7 +10,7 @@ const FacultySearch = () => {
       return;
     }
     try {
-      const response = await fetch(`http://localhost:3000/faculty/search?name=${searchTerm}`);
+      const response = await fetch(`https://visitor-hub-backend.onrender.com/faculty/search?name=${searchTerm}`);
       const data = await response.json();
       setSuggestions(data);
     } catch (error) {

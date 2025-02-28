@@ -44,7 +44,7 @@ function Register() {
   useEffect(() => {
     // Fetch visitor data when component mounts
     axios
-      .get(`http://localhost:3000/visitor/${passno}`)
+      .get(`https://visitor-hub-backend.onrender.com/visitor/${passno}`)
       .then(response => {
         console.log("Visitor data:", response.data);
         setFormData(prevData => ({
@@ -79,7 +79,7 @@ const handleChange = (e) => {
     }
     try {
       const response = await fetch(
-        `http://localhost:3000/faculty/search?name=${searchTerm}`
+        `https://visitor-hub-backend.onrender.com/faculty/search?name=${searchTerm}`
       );
       const data = await response.json();
       setFormData(prevData => ({ ...prevData, suggestions: data }));
@@ -100,7 +100,7 @@ const handleChange = (e) => {
     e.preventDefault();
     setLoading(true);  // Set loading state to true while updating
     axios
-      .put(`http://localhost:3000/visitor/${formData.passno}`, formData)  // Ensure correct endpoint URL
+      .put(`https://visitor-hub-backend.onrender.com/visitor/${formData.passno}`, formData)  // Ensure correct endpoint URL
       .then(res => {
         console.log("Visitor updated successfully:", res.data);
         setLoading(false);  // Reset loading state after success

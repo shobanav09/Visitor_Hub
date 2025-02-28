@@ -13,7 +13,7 @@ export default function Visitors() {
   const fetchVisitors = async (page) => {
     try {
       const res = await axios.get(
-        `http://localhost:3000/visitors?page=${page}&limit=5`
+        `https://visitor-hub-backend.onrender.com/visitors?page=${page}&limit=5`
       );
       setVisitors(res.data.visitors);
       setTotalPages(res.data.totalPages);

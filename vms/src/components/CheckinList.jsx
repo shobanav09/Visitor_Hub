@@ -13,7 +13,7 @@ function CheckinList() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/visitors")
+      .get("https://visitor-hub-backend.onrender.com/visitors")
       .then((res) => {
         if (Array.isArray(res.data.visitors)) {
           // Filter visitors to show only those with status true
@@ -180,7 +180,7 @@ function CheckinList() {
     if (isConfirmed) {
       // Update the visitor's status to 'false' (checked out)
       axios
-        .patch(`http://localhost:3000/visitors/${visitor.passno}`, { status: false })
+        .patch(`https://visitor-hub-backend.onrender.com/visitors/${visitor.passno}`, { status: false })
         .then((response) => {
           // Successfully updated the status
           alert("Visitor successfully checked out.");

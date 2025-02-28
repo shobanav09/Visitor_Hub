@@ -44,7 +44,7 @@ function Register1() {
     }
     try {
       const response = await fetch(
-        `http://localhost:3000/faculty/search?name=${searchTerm}`
+        `https://visitor-hub-backend.onrender.com/faculty/search?name=${searchTerm}`
       );
       const data = await response.json();
       setSuggestions(data);
@@ -72,7 +72,7 @@ function Register1() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/latest-passno")
+      .get("https://visitor-hub-backend.onrender.com/latest-passno")
       .then((res) => setPassno(res.data.passno))
       .catch((err) => console.error("Error fetching pass number:", err));
   }, []);
@@ -167,7 +167,7 @@ function Register1() {
     };
 
     try {
-      await axios.post("http://localhost:3000/visitor/register", formData);
+      await axios.post("https://visitor-hub-backend.onrender.com/visitor/register", formData);
       alert("Registration successful");
       navigate("/");
     } catch (err) {
