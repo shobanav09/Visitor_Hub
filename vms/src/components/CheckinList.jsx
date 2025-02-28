@@ -184,6 +184,7 @@ function CheckinList() {
         .then((response) => {
           // Successfully updated the status
           alert("Visitor successfully checked out.");
+          navigate('/list')
           // Update the visitors list to reflect the change
           setVisitors(visitors.map(v => (v.passno === visitor.passno ? { ...v, status: false } : v)));
         })

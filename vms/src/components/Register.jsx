@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import { useParams } from "react-router-dom";
+import { useParams , useNavigate} from "react-router-dom";
 import axios from "axios";
 import { MdOutlineSpeakerNotes } from "react-icons/md";
 
@@ -40,6 +40,7 @@ function Register() {
   const inputRefs = useRef([]);
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Fetch visitor data when component mounts
@@ -103,6 +104,7 @@ const handleChange = (e) => {
       .put(`https://visitor-hub-backend.onrender.com/visitor/${formData.passno}`, formData)  // Ensure correct endpoint URL
       .then(res => {
         console.log("Visitor updated successfully:", res.data);
+        navigate("/list");
         setLoading(false);  // Reset loading state after success
         alert("Visitor updated successfully");
       })
