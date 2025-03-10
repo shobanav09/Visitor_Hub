@@ -20,9 +20,9 @@ mongoose.connect(process.env.DB_URI, {
 // Visitor Schema
 const VisitorSchema = new mongoose.Schema({
   template: { type: String, trim: true },
-  passno: { type: String, required: true, unique: true, trim: true },
-  firstname: { type: String, required: true, trim: true, minlength: 2 },
-  lastname: { type: String, required: true, trim: true },
+  passno: { type: String,trim: true },
+  firstname: { type: String, trim : true },
+  lastname: { type: String, trim: true },
   company: { type: String, trim: true },
   mobile: {
     type: String,
@@ -58,13 +58,7 @@ const VisitorSchema = new mongoose.Schema({
   area: { type: String, trim: true },
   valid: { type: String, trim: true },
   remarks: { type: String, trim: true },
-  vehicleNo: {
-    type: String
-    // validate: {
-    //   validator: v => /^[A-Z]{2}\d{2}[A-Z]{1,2}\d{4}$/.test(v),
-    //   message: "Invalid vehicle number format",
-    // },
-  },
+  vehicleNo: { type: String, trim: true},
   spl: { type: String, trim: true },
   image: { type: String, trim: true },
   idType: {
